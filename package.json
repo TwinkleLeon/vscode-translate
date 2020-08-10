@@ -1,0 +1,45 @@
+{
+  "name": "translate",
+  "publisher": "leontwo",
+  "displayName": "Exact-Variable",
+  "description": "Language translation",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.47.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChristianKohler/PathIntellisense.git"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:translate.variable"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "translate.variable",
+        "title": "Exact-Variable（中译英）"
+      }
+    ],
+    "keybindings": [
+      {
+        "when": "resourceLangId == html || resourceLangId == javaScript || resourceExtname == vue",
+        "command": "translate.variable",
+        "key": "ctrl+0",
+        "mac": "cmd+0"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "google-translate-open-api": "^1.3.5"
+  }
+}
